@@ -5,9 +5,11 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 const app = express();
 
+const publicPath = path.resolve(__dirname, "..", "public");
 const viewsPath = path.resolve(__dirname, "..", "views");
 app.set("views", viewsPath);
 app.set("view engine", "ejs");
+app.use(express.static(publicPath));
 
 const apiurl =
   `https://api.openweathermap.org/data/2.5/weather?lat={%LAT%}&lon={%LONG%}&appid={%API_KEY%}&units=metric`.replace(
@@ -23,6 +25,10 @@ app.get("/wheather", async (req, res) => {
   res.send(response);
 });
 
+app.get("*", (req, res) => {
+  res.render("404");
+});
+
 app.listen(port, () => {
-  console.log(`app serving on localhost:${port}`);
+  console.log(`app serving on http://localhost:${port}`);
 });
