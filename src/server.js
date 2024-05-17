@@ -1,8 +1,13 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
+const path = require("path");
 
 const port = process.env.PORT || 3000;
 const app = express();
+
+const viewsPath = path.resolve(__dirname, "..", "views");
+app.set("views", viewsPath);
+app.set("view engine", "ejs");
 
 const apiurl =
   `https://api.openweathermap.org/data/2.5/weather?lat={%LAT%}&lon={%LONG%}&appid={%API_KEY%}&units=metric`.replace(
