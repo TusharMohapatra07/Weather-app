@@ -1,5 +1,5 @@
 {
-  "name": "8.node_wheather-app",
+  "name": "8.node_weather-app",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {

@@ -11,18 +11,25 @@ app.set("views", viewsPath);
 app.set("view engine", "ejs");
 app.use(express.static(publicPath));
 
-const apiurl =
+const latLongUrl =
   `https://api.openweathermap.org/data/2.5/weather?lat={%LAT%}&lon={%LONG%}&appid={%API_KEY%}&units=metric`.replace(
     /{%API_KEY%}/g,
     process.env.API_KEY
   );
 
-app.get("/wheather", async (req, res) => {
-  const data = await fetch(
-    apiurl.replace(/{%LAT%}/g, 12.9716).replace(/{%LONG%}/g, 77.5946)
-  );
-  const response = await data.json();
-  res.send(response);
+// app.get("/weather", async (req, res) => {
+//   const data = await fetch(
+//     apiurl.replace(/{%LAT%}/g, 12.9716).replace(/{%LONG%}/g, 77.5946)
+//   );
+//   const response = await data.json();
+//   res.send(response);
+// });
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/help", (req, res) => {
+  res.render("help");
 });
 
 app.get("*", (req, res) => {
