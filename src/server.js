@@ -17,6 +17,11 @@ const latLongUrl =
     process.env.API_KEY
   );
 
+const cityUrl =
+  `https://api.openweathermap.org/data/2.5/weather?q={%CITY_NAME%}&appid={%API_key%}`.replace(
+    /{%API_KEY%}/g,
+    process.env.API_KEY
+  );
 // app.get("/weather", async (req, res) => {
 //   const data = await fetch(
 //     apiurl.replace(/{%LAT%}/g, 12.9716).replace(/{%LONG%}/g, 77.5946)
@@ -30,6 +35,44 @@ app.get("/", (req, res) => {
 
 app.get("/help", (req, res) => {
   res.render("help");
+});
+
+app.get("/weather", async (req, res) => {
+  const { query } = req;
+  if (Object.hasOwn(query, "info")) {
+    if (
+      query.info === "coordinates" &&
+      Object.hasOwn(query, "lat") &&
+      Object.hasOwn(query, "long")
+    ) {
+      // const data = await fetch(
+      //   latLongUrl
+      //     .replace(/{%LAT%}/g, query.lat)
+      //     .replace(/{%LONG%}/g, query.long)
+      // );
+      // const json = await data.json();
+      // return res.send(json);
+      return res.send({
+        info: query.info,
+        lat: query.lat,
+        long: query.long,
+      });
+    } else if (query.info === "city" && Object.hasOwn(query, "cityname")) {
+      // const data = await fetch(
+      //   cityUrl.replace(/{%CITY_NAME%}/g, query.cityname)
+      // );
+      // const json = await data.json();
+      // return res.send(json);
+      return res.send({
+        info: query.info,
+        city: query.cityname,
+      });
+    } else {
+      return res.sendStatus(404);
+    }
+  } else {
+    return res.sendStatus(400);
+  }
 });
 
 app.get("*", (req, res) => {
