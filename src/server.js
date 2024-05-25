@@ -22,13 +22,7 @@ const cityUrl =
     /{%API_KEY%}/g,
     process.env.API_KEY
   );
-// app.get("/weather", async (req, res) => {
-//   const data = await fetch(
-//     apiurl.replace(/{%LAT%}/g, 12.9716).replace(/{%LONG%}/g, 77.5946)
-//   );
-//   const response = await data.json();
-//   res.send(response);
-// });
+
 app.get("/", (req, res) => {
   res.render("index");
 });
