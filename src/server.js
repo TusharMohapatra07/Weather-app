@@ -18,7 +18,7 @@ const latLongUrl =
   );
 
 const cityUrl =
-  `https://api.openweathermap.org/data/2.5/weather?q={%CITY_NAME%}&appid={%API_KEY%}`.replace(
+  `https://api.openweathermap.org/data/2.5/weather?q={%CITY_NAME%}&appid={%API_KEY%}&units=metric`.replace(
     /{%API_KEY%}/g,
     process.env.API_KEY
   );
