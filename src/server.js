@@ -18,7 +18,7 @@ const latLongUrl =
   );
 
 const cityUrl =
-  `https://api.openweathermap.org/data/2.5/weather?q={%CITY_NAME%}&appid={%API_key%}`.replace(
+  `https://api.openweathermap.org/data/2.5/weather?q={%CITY_NAME%}&appid={%API_KEY%}`.replace(
     /{%API_KEY%}/g,
     process.env.API_KEY
   );
@@ -39,28 +39,19 @@ app.get("/weather", async (req, res) => {
       Object.hasOwn(query, "lat") &&
       Object.hasOwn(query, "long")
     ) {
-      // const data = await fetch(
-      //   latLongUrl
-      //     .replace(/{%LAT%}/g, query.lat)
-      //     .replace(/{%LONG%}/g, query.long)
-      // );
-      // const json = await data.json();
-      // return res.send(json);
-      return res.send({
-        info: query.info,
-        lat: query.lat,
-        long: query.long,
-      });
+      const data = await fetch(
+        latLongUrl
+          .replace(/{%LAT%}/g, query.lat)
+          .replace(/{%LONG%}/g, query.long)
+      );
+      const json = await data.json();
+      return res.send(json);
     } else if (query.info === "city" && Object.hasOwn(query, "cityname")) {
-      // const data = await fetch(
-      //   cityUrl.replace(/{%CITY_NAME%}/g, query.cityname)
-      // );
-      // const json = await data.json();
-      // return res.send(json);
-      return res.send({
-        info: query.info,
-        city: query.cityname,
-      });
+      const data = await fetch(
+        cityUrl.replace(/{%CITY_NAME%}/g, query.cityname)
+      );
+      const json = await data.json();
+      return res.send(json);
     } else {
       return res.sendStatus(404);
     }
