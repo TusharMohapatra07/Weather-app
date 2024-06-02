@@ -33,6 +33,7 @@ footer p {
 
 .form {
   border-top: #eee 1px solid;
+  padding: 36px 0px 20px 20px;
 }
 
 .formText {
@@ -72,4 +73,21 @@ footer p {
 
 .temperature {
   transform: translateX(4px);
+}
+
+input {
+  border: 1px solid #cccccc;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #888;
+  color: white;
+  padding: 8px;
+}
+
+button:hover {
+  background: black;
 }
