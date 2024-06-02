@@ -14,7 +14,6 @@ h1 {
 
 footer {
   border-top: #eee 1px solid;
-  color: #f71735;
   margin-top: 16px;
 }
 
@@ -38,4 +37,12 @@ footer p {
 
 .formText {
   margin: 5px 0;
+}
+
+.error {
+  color: rgba(221, 48, 48, 0.85);
+}
+
+.message {
+  color: rgba(0, 0, 0, 0.9);
 }
