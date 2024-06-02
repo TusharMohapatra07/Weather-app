@@ -16,7 +16,7 @@ form.addEventListener("submit", async (eve) => {
     }
     if (cityInput.value !== "") {
       const data = await sendData(
-        `http://localhost:10000/weather?info=city&cityname=${cityInput.value}`
+        `/weather?info=city&cityname=${cityInput.value}`
       );
       display(data);
       cityInput.value = "";
@@ -24,7 +24,7 @@ form.addEventListener("submit", async (eve) => {
     }
     if (latitude.value !== "" && longitude.value !== "") {
       const data = await sendData(
-        `http://localhost:10000/weather?info=coordinates&lat=${latitude.value}&long=${longitude.value}`
+        `/weather?info=coordinates&lat=${latitude.value}&long=${longitude.value}`
       );
       display(data);
       latitude.value = "";
