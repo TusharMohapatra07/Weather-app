@@ -3,7 +3,25 @@
   <%- include('./partials/head.ejs', { css: 'style'}) %>
   <body>
     <h1>HELP</h1>
-    <%- include('./partials/navigation.ejs', { isWeather: false }) %> <%-
-    include('./partials/foot.ejs') %>
+    <%- include('./partials/navigation.ejs', { isWeather: false }) %>
+    <ul class="outer">
+      <li>Use "/weather" route to get weather data in JSON format</li>
+      <ul class="inner">
+        <li>
+          Using coordinates <br />
+          /weather?info=coordinates&lat={LATITUDE}&long={LONGITUDE}
+        </li>
+        <li>
+          Using city name <br />
+          /weather?info=city&cityname={CITY NAME}
+        </li>
+      </ul>
+      <li>Use the form on "/" route to get weather information in UI</li>
+      <ul class="inner">
+        <li>Use only the city name</li>
+        <li>Use both latitude and longitude only</li>
+      </ul>
+    </ul>
+    <%-include('./partials/foot.ejs') %>
   </body>
 </html>

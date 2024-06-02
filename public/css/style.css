@@ -37,7 +37,7 @@ footer p {
 }
 
 .formText {
-  margin: 5px 0;
+  margin: 5px 30%;
 }
 
 .error {
@@ -90,4 +90,17 @@ button {
 
 button:hover {
   background: black;
+}
+
+ul.outer {
+  border-top: #eee 1px solid;
+  padding: 36px 30px 20px;
+}
+
+ul.outer > li {
+  margin-top: 16px;
+}
+
+ul.inner > li {
+  margin-top: 4px;
 }
