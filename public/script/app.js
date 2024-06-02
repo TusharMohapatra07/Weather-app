@@ -1,7 +1,3 @@
-// fetch("http://localhost:3300/weather?info=city&cityname=bengaluru")
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
-
 const form = document.querySelector(".form");
 const cityInput = document.querySelector(".city");
 const latitude = document.querySelector(".latitude");
