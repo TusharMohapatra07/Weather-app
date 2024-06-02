@@ -31,3 +31,11 @@ footer p {
 .link-container a:hover {
   color: #333333;
 }
+
+.form {
+  border-top: #eee 1px solid;
+}
+
+.formText {
+  margin: 5px 0;
+}
