@@ -1,14 +1,8 @@
 # Weather App
 
----
-
 A simple weather application built with Express.js and EJS for templating. This app allows you to get weather information using either coordinates or city name.
 
----
-
 ## Routes
-
----
 
 ### Home Route - `/`
 
@@ -37,11 +31,7 @@ To get weather information using a city name, use the following format:
 
     `/weather?info=city&cityname={CITY NAME}`
 
----
-
 ## Usage
-
----
 
 1.  **Clone the repository:**
 
@@ -75,11 +65,7 @@ To get weather information using a city name, use the following format:
     http://localhost:3000
     ```
 
----
-
 ## Examples
-
----
 
 #### Get weather information using city name
 
@@ -89,10 +75,6 @@ http://localhost:3000/weather?info=city&cityname=London
 
 http://localhost:3000/weather?info=coordinates&lat=51.5074&long=-0.1278
 
----
-
 ## API
-
----
 
 This app uses the OpenWeather API to fetch weather information. You will need an API key from OpenWeather to use this app.
