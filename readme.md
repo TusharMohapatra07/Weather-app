@@ -109,3 +109,7 @@ This app uses the OpenWeather API to fetch weather information. You will need an
     ```
 
     **Important:** Once you run `npm dev`, the server will usually run in your terminal. You'll need to keep this terminal window open while you're developing. The server will provide you with a local URL (usually `http://localhost:<port>` or `http://127.0.0.1:<port>`) that you can open in your web browser to view the project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
